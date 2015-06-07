@@ -1,0 +1,104 @@
+
+    <ion-view title="" hide-back-button="true">
+      <ion-nav-buttons side="secondary">
+           <button class="button button-icon ion-ios-star-half" ng-click="doSomething()">
+      </button>
+      <button class="button button-icon ion-ios-list-outline" ng-click="OpenHistory()">
+      </button>
+      
+
+    </ion-nav-buttons>
+  <ion-content class="has-header dashboard">
+    <ion-refresher
+      pulling-text="Refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="list">
+      <div class="card">
+
+          <div  class='item item-task'>
+            
+            <h2>{{getCurrentUser()}}</h2>
+            <p>Level: {{calculateLevel()}}</p>
+          </div>
+
+
+      <!--  <progress-arc></progress-arc> -->
+
+
+          <div class="item tabs tabs-secondary tabs-icon-left" ng-controller="HistoryCtrl" >
+            <div class="tab-item tab-main-left">
+              <span class="title-red"> {{ calculateProductivity() }} </span><span class="medium-text">Productivity Ratio</span>
+            </div>
+
+          <!--   <div class="tab-item tab-main-right">
+            <span class="title-red">20 </span><span class="medium-text">PMoney</span>
+
+            </div> -->
+
+          </div>
+
+          <div class="item row" ng-controller="tasksCtrl">
+            <div class="col">
+              <p>
+                XP
+                <span class="pull-right medium-text">{{calculateCurrentXP() * 100}} / {{calculateMaxProgress()*100 + progressCheckpoint*100}}</span>
+                  <progress class="progress-bar" ng-bind="xp" max="{{calculateMaxProgress()}}" value="{{calculateExp()}}"></progress>
+              </p>
+            </div>
+          </div>
+
+         <!--  <div class="item row">
+            <div class="col">
+              <p>
+                HP
+                <span class="pull-right medium-text">20 / 40</span>
+              </p>
+              <progressbar max="100" value="(user.attributes.HP*100)/calculatedData.maxHp"></progressbar>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+        <div class="list">
+          <div class="card"> 
+            <div class='item item-task' >
+              <h2 ng-click="navTo('addtask')" >Tasks to do next </h> 
+              <span class="item-icon-right" >
+              <i class="icon ion-plus "></i>
+              </span>
+            </div>
+
+
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+              <div class="tab-item tab-main-left" ng-controller = "HistoryCtrl">
+                <span class="title-red">{{getTasksToday()}} </span><span class="medium-text">Completed today</span>
+              </div>
+              <div class="tab-item tab-main-right" ng-controller="HistoryCtrl">
+              <span class="title-red"> {{dailyProductivity()}} </span><span class="medium-text">Productivity today</span>
+              </div>
+            </div>
+
+<!-- href="#/app/history/{{task.id}}" -->
+
+
+          <a  class="item item-icon-right" ng-repeat="task in tasksCollection" ng-controller="HistoryCtrl"  >
+           <!--  <i class="icon ion-ios-minus-outline" ng-click="deleteItem()"></i> -->
+            <i class="icon ion-ios-checkmark-outline" ng-click="addToHistory($index, task.info, task.measured, task.total, task.done, task.id)"  ></i>
+            
+            {{task.info}} 
+           <!--  <i class="icon ion-plus icon-right" ></i> -->
+     
+        </a>
+        </div>
+      </div>
+
+
+      </div>
+
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

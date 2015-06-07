@@ -1,0 +1,10 @@
+
+<ion-view view-title="">
+  <ion-content>
+    <ion-list ng-repeat ="item in tasksHistory">
+        <ion-item >
+                 {{item.info}} <a class = "row ion-arrow-right-b"> &nbsp; {{HistoryTotalCompleted(item.done, item.total)}}% Completed</a>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

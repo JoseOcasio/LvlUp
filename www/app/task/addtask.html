@@ -1,0 +1,38 @@
+
+   <ion-view>
+
+    <!-- <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div> -->
+ 
+  <ion-content>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Task</span>
+          <input type="text" ng-model="taskInfo"> 
+        </label>
+        <label class="item "> Can this task be measured?
+        
+          <p>        
+          <ion-checkbox ng-repeat="item in devList"
+                      ng-model="item.checked" 
+                      ng-checked="item.checked"
+                      ng-click="change(item)">
+                      {{ item.text }}
+          </ion-checkbox>
+        </p>
+          </label>
+
+           <label ng-hide="hide" class="item item-input" >
+          <span class="input-label">How much minutes?</span>
+          <input type="text" ng-model="taskMinutes">
+        </label>
+      
+
+        <label class="item" ng-controller="tasksCtrl">
+          <button class="button button-block button-royal" type="submit"  ng-click="addTask()">Add Task</button>
+        </label>
+      </div>
+      
+  </ion-content>
+</ion-view>
