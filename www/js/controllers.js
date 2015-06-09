@@ -4,7 +4,7 @@ var taskCompletedTotal;
 var taskCompletedMeasured;
 var taskCompletedDate;
 angular.module('starter.controllers', ['ionic.utils'])
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state,  $ionicSideMenuDelegate, $localstorage) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $localstorage) {
   
   $scope.currentUsername = $localstorage.get("username");
   if ($scope.currentUsername == undefined){
@@ -92,6 +92,11 @@ angular.module('starter.controllers', ['ionic.utils'])
   $scope.OpenHistory = function() 
   {
     $state.go('app.history');
+  };
+
+  $scope.OpenAchievements = function() 
+  {
+    $state.go('app.achievements');
   };
 
   $scope.login = function() {
@@ -428,7 +433,7 @@ $ionicConfig.backButton.text("History");
         
       }
         //$localstorage.set("productivityToday", (total/($scope.tasksHistory.length+multiplier))*100 )
-        return Math.trunc((total/($scope.tasksHistory.length+multiplier))*100);
+        return Math.trunc((total/($scope.getTasksToday()+multiplier))*100);
       
       
     };
@@ -470,10 +475,8 @@ $ionicConfig.backButton.text("History");
           var productivityToday = $localstorage.get("productivityToday");
           var username = $localstorage.get("username");
           // exp
-
           $localstorage.clear();
           var d = new Date().toString();
-          
 
           //checkpoint
           for (var i =0; i< $scope.tasksCollection.length; i++)
@@ -499,7 +502,7 @@ $ionicConfig.backButton.text("History");
               total: $scope.tasksHistory[i].total,
               done: $scope.tasksHistory[i].done,
               id: i,
-              date: d
+              date: $scope.tasksHistory[i].date.toString()
             });
 
           }
@@ -543,6 +546,10 @@ $ionicConfig.backButton.text("History");
   };
 
 
+})
+
+.controller('AchievementsCtrl', function($scope, $stateParams, $ionicConfig) {
+  $ionicConfig.backButton.text("Achievements");
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
