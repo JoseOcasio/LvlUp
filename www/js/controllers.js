@@ -433,10 +433,10 @@ $ionicConfig.backButton.text("History");
         
       }
         //$localstorage.set("productivityToday", (total/($scope.tasksHistory.length+multiplier))*100 )
-        if (total == NaN)
+        if (isNaN(Math.trunc(total/$scope.getTasksToday())))
           return 0;
-
-        return Math.trunc((total/($scope.getTasksToday()+multiplier))*100);
+        else
+          return Math.trunc((total/($scope.getTasksToday()+multiplier))*100);
       
       
     };
