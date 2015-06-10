@@ -83,9 +83,9 @@
 <!-- href="#/app/history/{{task.id}}" -->
 
 
-          <a  class="item item-icon-right" ng-repeat="task in tasksCollection" ng-controller="HistoryCtrl"  >
+          <a  class="item item-icon-right" ng-repeat="task in tasksCollection" ng-controller="HistoryCtrl" on-swipe-left="deleteTask($index, task.id)"  >
            <!--  <i class="icon ion-ios-minus-outline" ng-click="deleteItem()"></i> -->
-            <i class="icon ion-ios-checkmark-outline" ng-click="addToHistory($index, task.info, task.measured, task.total, task.done, task.id)"  ></i>
+            <i class="icon ion-ios-checkmark-outline"  ng-click="addToHistory($index, task.info, task.measured, task.total, task.done, task.id)"  ></i>
             
             {{task.info}} 
            <!--  <i class="icon ion-plus icon-right" ></i> -->

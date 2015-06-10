@@ -4,19 +4,69 @@
      <div class="card">
   		<div class="item item-divider">
     		Lifetime Productivity
+
   		</div>
   		<div class="item item-text-wrap">
-    		This is a basic Card with some text.
+
+          <div class="item">
+            <h2>Complete 1 task</h2>
+            <p><progress class="progress-bar" min="0" max ="1" value="{{getTasksHistory()}}"> </progress></p>
+          </div>
+
+          <div class="item">
+            <h2>Complete 5 task</h2>
+            <p><progress class="progress-bar" min ="0" max ="5" value="{{getTasksHistory()}}" > </progress></p>
+          </div>
+
+          <div class="item">
+            <h2>Complete 10 task</h2>
+            <p><progress class="progress-bar" min="0" max="10" value="{{getTasksHistory()}}"> </progress></p>
+          </div>
+
+          <div class="item">
+            <h2>Complete 15 task</h2>
+            <p><progress class="progress-bar" min ="0" max ="15" value="{{getTasksHistory()}}"> </progress></p>
+          </div>
+
+          <div class="item">
+            <h2>Complete 30 task</h2>
+            <p><progress class="progress-bar" min="0" max="30" value="{{getTasksHistory()}}"> </progress></p>
+          </div>
+
+          <div class="item">
+            <h2>Complete 50 task</h2>
+            <p><progress class="progress-bar" min="0" max="50" value="{{getTasksHistory()}}"> </progress></p>
+          </div>
+
+          <div class="item" >
+            <h2>Complete 100 task</h2>
+            <p><progress class="progress-bar" min="0" max ="100" value="{{getTasksHistory()}}"> </progress></p>
+          </div>
+
+          <div class="item">
+            <h2>Complete 100% in one task</h2>
+            <p><progress class="progress-bar" min ="0" max="1" value="{{getSingle100PercentTask()}}"> </progress></p>
+          </div>
+
+
   		</div>
 	</div>
 
-	 <div class="card">
+	<!--  <div class="card">
   		<div class="item item-divider">
     		Daily Productivity
   		</div>
   		<div class="item item-text-wrap">
-    		This is a basic Card with some text.
+    		 <div class="item">
+            <h2>Complete the day with 100% productivity</h2>
+            <p><progress class="progress-bar"> </progress></p>
+          </div>
+
+          <div class="item" ng-controller="HistoryCtrl">
+            <h2>Complete 10 tasks in one day</h2>
+            <p><progress class="progress-bar" min="0" max="10" value="{{getTasksToday()}}"> </progress></p>
+          </div>
   		</div>
-	</div>
+	</div> -->
   </ion-content>
 </ion-view>

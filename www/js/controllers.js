@@ -433,10 +433,19 @@ $ionicConfig.backButton.text("History");
         
       }
         //$localstorage.set("productivityToday", (total/($scope.tasksHistory.length+multiplier))*100 )
+        if (total == NaN)
+          return 0;
+
         return Math.trunc((total/($scope.getTasksToday()+multiplier))*100);
       
       
     };
+
+  $scope.deleteTask = function(index, id){
+      $scope.tasksCollection.splice(index, 1);
+      $localstorage.removeItem("task" + id);
+  };
+
   $scope.addToHistory = function(index, title, measured, total, done, id) 
      {
       taskCompletedTitle = title;
@@ -465,7 +474,7 @@ $ionicConfig.backButton.text("History");
           $scope.modal.show();
         }
         
-        console.log("delete");
+         console.log("delete");
          $scope.tasksCollection.splice(index, 1);
          $localstorage.removeItem("task" + id);
 
@@ -550,6 +559,28 @@ $ionicConfig.backButton.text("History");
 
 .controller('AchievementsCtrl', function($scope, $stateParams, $ionicConfig) {
   $ionicConfig.backButton.text("Achievements");
+
+  $scope.getTasksHistory = function(){
+    return $scope.tasksHistory.length;
+  }
+
+  $scope.getSingle100PercentTask = function(){
+    var flag = false;
+    for (var i =0; i< $scope.tasksHistory.length; i++){
+      if ($scope.tasksHistory[i].measured == "Yes")
+      {
+        if(($scope.tasksHistory[i].total / $scope.tasksHistory[i].done) == 1){
+          flag = true;
+          console.log("In");
+        }
+      }
+    }
+
+    if (flag){
+      return 1;
+    }
+    else return 0;
+  };
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
