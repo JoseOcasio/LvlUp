@@ -23,14 +23,16 @@
         </p>
           </label>
 
+          <form name="myForm"> 
            <label ng-hide="hide" class="item item-input" >
           <span class="input-label">How much minutes?</span>
-          <input type="text" ng-model="taskMinutes">
+          <input ng-pattern="onlyNumbers" name="number" type="text" ng-model="taskMinutes">
         </label>
+        </form>
       
 
         <label class="item" ng-controller="tasksCtrl">
-          <button class="button button-block button-royal" type="submit"  ng-click="addTask()">Add Task</button>
+          <button ng-disabled="!myForm.number.$valid" class="button button-block button-royal" type="submit"  ng-click="addTask()">Add Task</button>
         </label>
       </div>
       

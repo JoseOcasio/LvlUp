@@ -6,16 +6,18 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="doTaskCompletion()">
+    <form name="myForm" ng-submit="doTaskCompletion()">
       <div class="list" ng-controller="TaskCompletionCtrl">
+
+       
         <label class="item item-input">
-          
-          <input type="text" ng-model="completion">
+        
+          <input ng-pattern="onlyNumbers" name="number" type="text" ng-model="completion">
           <span class="input-label"> / {{totalOfTask()}} minutes </span>
         </label>
        
         <label class="item">
-          <button class="button button-block button-royal"  type="submit" ng-click="modifyCompletion(completion)">Ok</button>
+          <button ng-disabled="!myForm.number.$valid" class="button button-block button-royal"  type="submit" ng-click="modifyCompletion(completion)">Ok</button>
         </label>
       </div>
     </form>

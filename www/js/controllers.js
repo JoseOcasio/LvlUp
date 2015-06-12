@@ -10,7 +10,8 @@ angular.module('starter.controllers', ['ionic.utils'])
   if ($scope.currentUsername == undefined){
     $state.go('app.usernameScreen');
   }
-
+  
+  $scope.onlyNumbers = /^\d+$/;
 
   //will get the current level
   $scope.currentLevel = $localstorage.get("level");
