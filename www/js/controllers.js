@@ -172,7 +172,7 @@ angular.module('starter.controllers', ['ionic.utils'])
 
   $scope.calculateLevel = function()
   {
-    return $scope.currentLevel;
+    return $localstorage.get("level");
   
   };
 
@@ -189,21 +189,6 @@ angular.module('starter.controllers', ['ionic.utils'])
     return ($scope.calculateLevel()*2);
   };
 
-
-  $scope.doRefresh = function() {
-    // $http.get('/new-items')
-    //  .success(function(newItems) {
-    //    $scope.items = newItems;
-    //  })
-      
-     // .finally(function() {
-     //   // Stop the ion-refresher from spinning
-     //   $scope.$broadcast('scroll.refreshComplete');
-     // });
-      
-      $scope.$broadcast('scroll.refreshComplete');
-    };
-
  //add a task
  $scope.addTask = function() {
 
@@ -213,7 +198,7 @@ angular.module('starter.controllers', ['ionic.utils'])
         template: 'Fields cannot be left blank!'
       })
     }
-    else if (($scope.result == "Yes" && $scope.taskMinutes == undefined) || $scope.taskMinutes <= 0)
+    else if (($scope.result == "Yes" && $scope.taskMinutes == undefined) || ($scope.result == "Yes" && $scope.taskMinutes <= 0) )
     {
     $ionicPopup.alert({
         title: 'Warning',
