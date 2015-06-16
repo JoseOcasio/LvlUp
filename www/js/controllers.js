@@ -5,7 +5,6 @@ var taskCompletedMeasured;
 var taskCompletedDate;
 angular.module('starter.controllers', ['ionic.utils'])
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $localstorage) {
-  
   $scope.currentUsername = $localstorage.get("username");
   if ($scope.currentUsername == undefined){
     $state.go('app.usernameScreen');
@@ -427,10 +426,11 @@ $ionicConfig.backButton.text("History");
       
     };
 
-  $scope.deleteTask = function(index, id){
-      $scope.tasksCollection.splice(index, 1);
-      $localstorage.removeItem("task" + id);
-  };
+  // $scope.deleteTask = function(index, id){
+  //     $scope.tasksCollection.splice(index, 1);
+  //     $localstorage.removeItem("task" + id);
+  //     $localstorage.set("indexPosition", $localstorage.get("indexPosition") - 1);
+  // };
 
   $scope.addToHistory = function(index, title, measured, total, done, id) 
      {
