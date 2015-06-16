@@ -426,11 +426,56 @@ $ionicConfig.backButton.text("History");
       
     };
 
-  // $scope.deleteTask = function(index, id){
-  //     $scope.tasksCollection.splice(index, 1);
-  //     $localstorage.removeItem("task" + id);
-  //     $localstorage.set("indexPosition", $localstorage.get("indexPosition") - 1);
-  // };
+  $scope.deleteTask = function(index, id){
+      $scope.tasksCollection.splice(index, 1);
+      $localstorage.removeItem("task" + id);
+
+       var indexTemp = $localstorage.get("indexPosition");
+          var lvl = $localstorage.get("level");
+          var exp = $localstorage.get("xp");
+          var productivityToday = $localstorage.get("productivityToday");
+          var username = $localstorage.get("username");
+          // exp
+          $localstorage.clear();
+          var d = new Date().toString();
+
+          //checkpoint
+          for (var i =0; i< $scope.tasksCollection.length; i++)
+          {
+            var entry = "task" + i;
+            $localstorage.setObject(entry, {
+              info: $scope.tasksCollection[i].info,
+              measured: $scope.tasksCollection[i].measured,
+              total: $scope.tasksCollection[i].total,
+              done: $scope.tasksCollection[i].done,
+              id: $scope.tasksCollection.length,
+              date: d
+            });
+
+          }
+
+          for (var i =0; i< $scope.tasksHistory.length; i++)
+          {
+            var entry = "history" + i;
+            $localstorage.setObject(entry, {
+              info: $scope.tasksHistory[i].info,
+              measured: $scope.tasksHistory[i].measured,
+              total: $scope.tasksHistory[i].total,
+              done: $scope.tasksHistory[i].done,
+              id: i,
+              date: $scope.tasksHistory[i].date.toString()
+            });
+
+          }
+
+          $localstorage.set("username", username);
+          $localstorage.set("indexPosition", indexTemp - 1);
+          $localstorage.set("level", lvl);
+          $localstorage.set("xp", exp);
+          //$localstorage.set("productivityToday", productivityToday);
+          $localstorage.set("indexPositionHistory", $scope.tasksHistory.length);
+
+  };
 
   $scope.addToHistory = function(index, title, measured, total, done, id) 
      {
