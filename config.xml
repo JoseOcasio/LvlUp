@@ -3,6 +3,7 @@
   <preference name="BackupWebStorage" value="none" />
   <name>LvlUp</name>
   <description>
+        Author: Jose A Ocasio Serra
         An Ionic Framework and Cordova project for productivity and a mixture of RPG elements.
     </description>
   <author email="zdreamt@gmail.com" href="http://ionicframework.com/">
