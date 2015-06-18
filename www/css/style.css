@@ -2,56 +2,13 @@
 /*#f3796a*/
 /*#adaeae*/
 
-/*Quest page*/
-.questTimer {
-  text-align: center;
-  font-style: italic;
-}
 
-.battleStatus {
-  float:right;
-}
 
-/* FAQ & HELP PAGE */
-.item.faq {
-  font-size:17px;
-  white-space: normal;
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  padding:11px 11px 11px 11px;
-}
-
-.list.marg {
-  margin:3px 10px -5px 10px;
-}
-
-.scrollUp {
-  position:absolute;
-  right:-36px;
-  top:15px;
-}
-
-/* Make sure text wraps around */
-.item.list-heading.faqanswer h1 {
-  white-space:normal;
-  padding-right:13px;
-}
-
-.item.list-heading.faqanswer p {
-  white-space:normal;
-}
-
-.item.item-padding.noquest {
-  white-space:normal;
-}
 
 /* MAIN CHARACTER SCREEN */
 .bar-custom {
   background-color: #fff;
   border-bottom: 2px solid #f3796a;
-}
-
-.icon-gray {
-  color: #777;
 }
 
 .bar .title {
@@ -122,27 +79,6 @@
   font-size: 11px;
 }
 
-.main-attributes {
-  text-align: center;
-}
-
-.main-attributes i {
-  position: relative;
-  float: right;
-  top: 0px;
-  right: 0px;
-}
-
-.main-attributes h1 {
-  font-size: 20px;
-  color: #777;
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-.main-attributes p {
-  font-size: 11px;
-}
 
 .progress-bar {
   background-color: #f3796a;
@@ -236,33 +172,6 @@
 
 /* END LIST SCREEN */
 
-/* BEGIN BATTLE STATS */
-.battle-stats {
-  text-align: center;
-}
-
-.battle-stats h1 {
-  font-size: 20px;
-  color: #777;
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-.battle-stats p {
-  font-size: 11px;
-}
-/* END BATTLE STATS */
-
-/* MISC */
-
-.alert-dismissable .close {
-  width: 33px;
-  height: 41px;
-  top: -12px;
-  right: -31px;
-}
-
-/* END MISC */
 
 ion-item.refresh.item {
    border-style:none;
@@ -300,24 +209,7 @@ i.ion-refresh.refresh {
   margin-right: 0;
 }
 
-.dashboard {
-  background-color: #EEEEEE;
-}
 
-.text-red {
-  color: red;
-  font-weight: bold;
-}
-
-.text-green {
-  color: green;
-  font-weight: bold;
-}
-
-.donut {
-  margin: 0 auto;
-  width: 200px;
-}
 
 .popup {
   border-radius: 12px;
