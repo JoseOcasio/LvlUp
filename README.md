@@ -7,9 +7,10 @@ LvlUp is an app made using Ionic Framework. Is a productivity app mixed with a l
 
 Features: 
 - Gain XP from completing tasks to level up.
-- Keep you day productive tracking your daily productivity ratio.
-- Simple and clean beatiful design.
+- Keep your day productive tracking your daily productivity ratio.
+- Complete achievements for personal growth.
+- Simple and clean design.
 - No ADS
 - Free
-- Complete achievements for personal growth.
+
 
