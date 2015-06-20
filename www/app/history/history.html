@@ -1,7 +1,11 @@
 
 <ion-view view-title="">
   <ion-content>
+    	<div class="item" ng-hide="hideEmptyHistory">
+    		Nothing to show, move on.
+    	</div>
     <ion-list ng-repeat ="item in tasksHistory">
+  
         <ion-item >
                  {{item.info}} <a class = "row ion-arrow-right-b"> &nbsp; {{HistoryTotalCompleted(item.done, item.total)}}% Completed</a>
         </ion-item>

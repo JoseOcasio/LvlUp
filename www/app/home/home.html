@@ -9,10 +9,7 @@
 
     </ion-nav-buttons>
   <ion-content class="has-header dashboard">
-    <!-- <ion-refresher
-      pulling-text="Refresh..."
-      on-refresh="doRefresh()">
-    </ion-refresher> -->
+
     <div class="list">
       <div class="card">
 
@@ -22,19 +19,10 @@
             <p>Level: {{calculateLevel()}}</p>
           </div>
 
-
-      <!--  <progress-arc></progress-arc> -->
-
-
           <div class="item tabs tabs-secondary tabs-icon-left" ng-controller="HistoryCtrl" >
             <div class="tab-item tab-main-left">
               <span class="title-red"> {{ calculateProductivity() }} </span><span class="medium-text">Productivity Ratio</span>
             </div>
-
-          <!--   <div class="tab-item tab-main-right">
-            <span class="title-red">20 </span><span class="medium-text">PMoney</span>
-
-            </div> -->
 
           </div>
 
@@ -80,17 +68,13 @@
               </div>
             </div>
 
-<!-- href="#/app/history/{{task.id}}" -->
 
-
-          <a  class="item item-icon-right" ng-repeat="task in tasksCollection" ng-controller="HistoryCtrl" on-swipe-left="deleteTask($index, task.id)"  >
-           <!--  <i class="icon ion-ios-minus-outline" ng-click="deleteItem()"></i> -->
-            <i class="icon ion-ios-checkmark-outline"  ng-click="addToHistory($index, task.info, task.measured, task.total, task.done, task.id)"  ></i>
-            
-            {{task.info}} 
-           <!--  <i class="icon ion-plus icon-right" ></i> -->
-     
-        </a>
+               <div class="item item-button-right" ng-repeat="task in tasksCollection" ng-controller="HistoryCtrl" on-swipe-left="deleteTask($index, task.id)">
+        {{task.info}}
+          <button class="button button-icon button-light"  ng-click="addToHistory($index, task.info, task.measured, task.total, task.done, task.id)">
+            <i class="icon ion-ios-circle-outline"></i>
+          </button>
+      </div>
         </div>
       </div>
 
