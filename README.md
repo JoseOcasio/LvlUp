@@ -14,3 +14,5 @@ Features:
 - Free
 
 
+See it in the AppStore: 
+- https://itunes.apple.com/us/app/lvlup/id1009050648?mt=8
